@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamify - Play Anywhere</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">GAMIFY</div>
+        <nav>
+            <a href="#" class="nav-link active" data-target="home">Home</a>
+            <a href="#" class="nav-link" data-target="games">Games</a>
+            <a href="#" class="nav-link" data-target="music">Music</a>
+            <a href="#" class="nav-link" data-target="profile">Profile</a>
+            <span id="nav-points" onclick="navigateTo('profile')">0 pts</span>
+        </nav>
+    </header>
+
+    <main id="app">
+        <!-- Views will be injected here -->
+        <div id="home-view" class="view active">
+            <section class="hero">
+                <h1>Level Up Your <span class="highlight">Downtime</span></h1>
+                <p>Experience classic games reimagined with modern aesthetics.</p>
+                <button class="cta-btn" onclick="navigateTo('games')">Start Playing</button>
+            </section>
+
+            <section class="featured-games">
+                <h2>Featured Games</h2>
+                <div class="game-grid">
+                    <div class="game-card" onclick="loadGame('guess-number')">
+                        <div class="card-icon"><img src="icons_images/Guess_The_Number.png" alt="Guess The Number">
+                        </div>
+                        <h3>Guess The Number</h3>
+                        <p>Test your intuition against the machine.</p>
+                    </div>
+                    <div class="game-card" onclick="loadGame('rps')">
+                        <div class="card-icon"><img src="icons_images/rock-paper-scissors.png"
+                                alt="Rock Paper Scissors"></div>
+                        <h3>Rock Paper Scissors</h3>
+                        <p>The classic hand game of chance.</p>
+                    </div>
+                    <div class="game-card" onclick="loadGame('hangman')">
+                        <div class="card-icon"><img src="icons_images/hangman.png" alt="Hangman"></div>
+                        <h3>Hangman</h3>
+                        <p>Guess the word before it's too late.</p>
+                    </div>
+                    <div class="game-card" onclick="loadGame('blackjack')">
+                        <div class="card-icon"><img src="icons_images/Blackjack.png" alt="Blackjack"></div>
+                        <h3>Blackjack</h3>
+                        <p>Beat the dealer to 21.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="game-container" class="view">
+            <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+            <div id="active-game-area"></div>
+        </div>
+
+        <div id="profile-view" class="view">
+            <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+            <div id="profile-container"></div>
+        </div>
+
+        <div id="music-view" class="view">
+            <button class="back-btn" onclick="navigateTo('home')">← Back to Home</button>
+            <div id="music-container"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Gamify. Crafted for gamers.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

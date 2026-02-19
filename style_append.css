@@ -1,0 +1,126 @@
+/* Profile Additions */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 2rem;
+}
+
+.avatar-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+}
+
+.level-bar-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.level-bar-fill {
+    height: 100%;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-val {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.badge {
+    padding: 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid gold;
+    border-radius: 8px;
+    display: inline-block;
+    color: gold;
+    margin: 0.5rem;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    border: var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.toast-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary);
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1000;
+}
+
+/* Updated Nav for Points */
+#nav-points {
+    color: var(--primary);
+    font-weight: bold;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+#nav-points:hover {
+    text-shadow: 0 0 10px var(--primary);
+}
+
+/* Modal styles for Feedback */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    border: var(--glass-border);
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
