@@ -40,3 +40,9 @@ If you cannot run Python, you can use extensions like "Live Server" in VS Code, 
 - `components/`: UI components.
     - `Profile.js`: User profile and stats.
     - `Music.js`: Music player and track list.
+
+
+
+```
+link:https://gamefyio.netlify.app/
+```
