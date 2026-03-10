@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: gamify-login/index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +25,7 @@
             <a href="#" class="nav-link" data-target="music">Music</a>
             <a href="#" class="nav-link" data-target="profile">Profile</a>
             <span id="nav-points" onclick="navigateTo('profile')">0 pts</span>
+            <span>Welcome, <?php echo $_SESSION['user']; ?> | <a href="gamify-login/logout.php">Logout</a></span>
         </nav>
     </header>
 
