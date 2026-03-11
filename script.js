@@ -40,6 +40,8 @@ window.navigateTo = (viewId) => {
         import('./components/Music.js').then(module => {
             module.renderMusic(document.getElementById('music-container'));
         });
+    } else if (viewId === 'login') {
+        document.getElementById('login-view').classList.add('active');
     } else if (viewId === 'about') {
         alert("Gamify - Created by Antigravity.\nVersion 1.0");
     }
@@ -66,5 +68,15 @@ window.loadGame = (gameId) => {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Gamify loaded!");
+
+    // Setup Navigation Listeners
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = e.target.getAttribute('data-target');
+            navigateTo(target);
+        });
+    });
+
     store.notify(); // Initial UI update
 });
